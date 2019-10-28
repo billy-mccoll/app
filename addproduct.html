@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<title>Add Product</title>
+	</head>
+	<body>
+		<!-- MAIN NAVIGATION -->
+		<nav
+			class="navbar navbar-expand-lg navbar-dark bg-dark pt-3 pb-3 borderBottom"
+		>
+			<a class="navbar-brand" href="/home">
+				<img src="img/logo.png" alt="" />
+			</a>
+			<!-- HAMBURGER MOBILE MENU -->
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarsExample05"
+				aria-controls="navbarsExample05"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<!-- NAVIGATION MENU ITEMS -->
+			<div class="collapse navbar-collapse" id="navbarsExample05">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="/home">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/seller">Sell Music</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/register">Register</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/login">Login</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/admin">Admin</a>
+					</li>
+				</ul>
+				<!-- SEARCH INPUT INSIDE HEADER -->
+				<form class="form-inline my-2 my-md-0">
+					<input
+						class="form-control"
+						type="text"
+						placeholder="Search"
+					/>
+				</form>
+			</div>
+		</nav>
+
+		<!-- MAIN WEBSITE CONTAINER -->
+		<div class="container">
+			<!-- h2 at top of the page -->
+			<h4 class="text-center mt-5 text-danger">ADD PRODUCT</h4>
+
+			<!-- UPLOAD FORM -->
+			<form
+				class="mb-5 mt-5 col-lg-8 offset-lg-2 text-danger"
+				action="/postProduct"
+				method="POST"
+			>
+				<!-- ARTIST NAME -->
+				<div class="form-group ">
+					<label for="artist">ARTIST</label>
+					<input
+						type="text"
+						class="form-control"
+						id="artist"
+						name="artist"
+						placeholder="Enter Artist Name"
+						required
+					/>
+				</div>
+
+				<!-- ALBUM NAME -->
+				<div class="form-group ">
+					<label for="track">ALBUM</label>
+					<input
+						type="text"
+						class="form-control"
+						id="album"
+						name="album"
+						placeholder="Enter Album Name"
+						required
+					/>
+				</div>
+
+				<!-- GENRE NAME -->
+				<div class="form-group ">
+					<label for="genre">GENRE</label>
+					<input
+						type="text"
+						class="form-control"
+						id="genre"
+						name="genre"
+						placeholder="Enter Genre"
+						required
+					/>
+				</div>
+
+				<!-- DATE -->
+				<div class="form-group ">
+					<label for="albumdate">RELEASE DATE</label>
+					<input
+						type="number"
+						class="form-control"
+						id="albumdate"
+						name="albumdate"
+						placeholder="Album Year"
+						required
+					/>
+				</div>
+
+				<!-- PRICE NAME -->
+				<div class="form-group ">
+					<label for="price">PRICE</label>
+					<input
+						type="double"
+						class="form-control"
+						id="Price"
+						name="price"
+						placeholder="£0.00"
+						required
+					/>
+				</div>
+
+				<!-- upload file -->
+				<!-- <div class="form-group">
+					<label for="uploadtrack">Upload Your Track</label>
+					<input
+						type="file"
+						class="form-control-file"
+						id="uploadtrack"
+					/>
+				</div> -->
+
+				<!-- submit button -->
+				<button
+					type="submit"
+					name="addproduct"
+					id="addproduct"
+					class="btn btn-lg btn-danger btn-block"
+				>
+					Submit
+				</button>
+			</form>
+		</div>
+
+		<script
+			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+			crossorigin="anonymous"
+		></script>
+		<script src="js/bootstrap.js"></script>
+	</body>
+</html>
