@@ -2,16 +2,25 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var bodyparser = require('body-parser');
+var fs = require('fs');
 var url =
 	'mongodb+srv://billy:billy@cluster0-d0qrq.mongodb.net/test?retryWrites=true&w=majority';
 var MongoClient = require('mongodb').MongoClient;
-
-app.set('view engine', 'ejs');
-
 // create body parser
 var urlencodedParser = bodyparser.urlencoded({ extended: false });
+var multer = require('multer');
+var upload = multer({ storage: storage });
+// SET STORAGE
+var storage = multer.diskStorage({
+	destination: (req, file, cb) => {
+		cb(null, 'uploads');
+	},
+	filename: (req, file, cb) => {
+		cb(null, file.filename + '-' + Date.now());
+	}
+});
 
-// connect to the database
+app.set('view engine', 'ejs');
 
 // Routes
 
@@ -67,9 +76,8 @@ app.post('/postProduct', urlencodedParser, (req, res) => {
 		url,
 		{ useNewUrlParser: true, useUnifiedTopology: true },
 		(err, client) => {
-			if (err) {
-				console.log(err);
-			} else {
+			if (err) throw err;
+			else {
 				var product = client
 					.db('musicdatabase')
 					.collection('newproducts');
@@ -83,19 +91,50 @@ app.post('/postProduct', urlencodedParser, (req, res) => {
 				};
 
 				product.insertOne(prod, (err, result) => {
-					if (err) {
-						console.log(err);
-					} else {
+					if (err) throw err;
+					else {
 						console.log(
 							'Product added to the database',
 							result.ops
 						);
 					}
 				});
+				client.close();
 			}
 		}
 	);
-	client.close();
+	res.send('thank you');
+});
+
+// ROUTE TO HANDLE ADD USER
+app.post('/addUser', upload.single('profileImage'), (req, res) => {
+	var img = fs.readFileSync(req.file.path);
+	var encode_image = img.toString('base64');
+	var user = {
+		fullname: req.body.fullname,
+		email: req.body.email,
+		password: req.body.password,
+		profileImage: {
+			contentType: req.file.mimetype,
+			image: new Buffer(encode_image, 'base64')
+		}
+	};
+
+	MongoClient.connect(
+		url,
+		{ useNewUrlParser: true, useUnifiedTopology: true },
+		(err, client) => {
+			if (err) throw err;
+			console.log('you are connected to the database');
+			var userCollection = client.db('musicdatabase').collection('users');
+			userCollection.insertOne(user, (err, result) => {
+				if (err) throw err;
+				console.log(result.ops);
+			});
+			client.close();
+		}
+	);
+	res.send('added');
 });
 
 // Set public folder

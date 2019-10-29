@@ -3,7 +3,13 @@
         "addproduct",
         "albumdate",
         "allartists",
+        "bodyparser",
+        "fullname",
+        "jso",
+        "mimetype",
         "musicdatabase",
-        "newproducts"
+        "newproducts",
+        "nobject",
+        "profileimage"
     ]
 }
