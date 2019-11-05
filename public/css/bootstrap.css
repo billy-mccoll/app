@@ -364,6 +364,7 @@ h1, h2, h3, h4, h5, h6,
   margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2;
+  color: #fff;
 }
 
 h1, .h1 {
@@ -1560,7 +1561,8 @@ pre code {
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: #0d0d0d;
+  color: #b21f2d;
 }
 
 .table-hover tbody tr:hover {
@@ -1725,7 +1727,7 @@ pre code {
 .table-dark,
 .table-dark > th,
 .table-dark > td {
-  background-color: #c6c8ca;
+  background-color: #0d0d0d;
 }
 
 .table-dark th,
@@ -1760,9 +1762,9 @@ pre code {
 }
 
 .table .thead-dark th {
-  color: #fff;
-  background-color: #343a40;
-  border-color: #454d55;
+  color: #0d0d0d;
+  background-color: #b21f2d;
+  border-color: #0D0D0D;
 }
 
 .table .thead-light th {
@@ -1773,7 +1775,7 @@ pre code {
 
 .table-dark {
   color: #fff;
-  background-color: #343a40;
+  background-color: #0d0d0d;
 }
 
 .table-dark th,
@@ -1787,7 +1789,8 @@ pre code {
 }
 
 .table-dark.table-striped tbody tr:nth-of-type(odd) {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: #0d0d0d;
+  color: #b21f2d;
 }
 
 .table-dark.table-hover tbody tr:hover {
@@ -9911,7 +9914,7 @@ a.text-light:hover, a.text-light:focus {
 }
 
 .text-dark {
-  color: #343a40 !important;
+  color: #0d0d0d !important;
 }
 
 a.text-dark:hover, a.text-dark:focus {
@@ -10028,7 +10031,7 @@ a.text-dark:hover, a.text-dark:focus {
     border: 1px solid #dee2e6 !important;
   }
   .table-dark {
-    color: inherit;
+    color: #0d0d0d;
   }
   .table-dark th,
   .table-dark td,
@@ -10037,7 +10040,7 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6;
   }
   .table .thead-dark th {
-    color: inherit;
+    color: #b21f2d;
     border-color: #dee2e6;
   }
 }

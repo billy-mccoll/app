@@ -47,12 +47,14 @@
 						<a class="nav-link" href="/register">Register</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/login"
-							>Login <span class="sr-only">(current)</span></a
-						>
+						<a class="nav-link" href="/admin">Admin</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/admin">Admin</a>
+						<form action="/logout?_method=DELETE" method="POST">
+							<button class="btn btn-sm btn-secondary">
+								Log Out
+							</button>
+						</form>
 					</li>
 				</ul>
 				<!-- SEARCH INPUT INSIDE HEADER -->
@@ -66,68 +68,8 @@
 			</div>
 		</nav>
 
-		<!-- Container for seller html -->
 		<div class="container">
-			<!-- ADD NEW PRODUCT BUTTON -->
-			<a class="mt-5 btn btn-danger" href="/addproduct" role="button"
-				>ADD PRODUCT</a
-			>
-
-			<!-- h2 at top of the page -->
-			<h2 class="text-center mt-5 text-light">
-				Active Products For Sale
-			</h2>
-
-			<!-- TABLE -->
-			<div class="table-responsive-sm">
-				<table class="table table-hover mt-5 text-danger">
-					<thead>
-						<tr>
-							<th scope="col" class="text-light">Cover</th>
-							<th scope="col" class="text-light">Artist</th>
-							<th scope="col" class="text-light">Track</th>
-							<th scope="col" class="text-light">Genre</th>
-							<th scope="col" class="text-light">Release Date</th>
-							<th scope="col" class="text-light">Price</th>
-							<th scope="col" class="text-light">Edit</th>
-							<th scope="col" class="text-light">Delete</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th scope="row">
-								<img
-									src="img/imgph.svg"
-									alt=""
-									width="60"
-									height="60"
-								/>
-							</th>
-							<td>Aqua</td>
-							<td>Barbie Girl</td>
-							<td>POP</td>
-							<td>12-08-1995</td>
-							<td>£1.99</td>
-							<td>
-								<button
-									type="submit"
-									class="btn btn-sm btn-danger"
-								>
-									Edit
-								</button>
-							</td>
-							<td>
-								<button
-									type="submit"
-									class="btn btn-sm btn-danger"
-								>
-									Delete
-								</button>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+			<h1>Hi <%= name %></h1>
 		</div>
 
 		<script

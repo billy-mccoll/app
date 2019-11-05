@@ -5,6 +5,7 @@
         "allartists",
         "bodyparser",
         "fullname",
+        "hashpassword",
         "jso",
         "mimetype",
         "musicdatabase",
